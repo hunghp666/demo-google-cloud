@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    appId: hunghp-demo-spring
+
+    gcp:
+      project-id: hunghp-demo-spring
+      datastore:
+        enabled: true
+      credentials:
+        location: classpath:account.json
