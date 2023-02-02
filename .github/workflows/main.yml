@@ -15,11 +15,14 @@ jobs:
       - name: Maven install
         run: mvn clean package -DskipTests
 
+      - name: Authenticate to Google Cloud
+        if: authen-with-gcloud
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: ${{secrets.GCP_SA_KEY}}
+
       - name: Deploy an App Engine app
         id: deploy-app
-        uses: google-github-actions/deploy-appengine@v1
+        uses: google-github-actions/deploy-appengine@v1.1.1
         with:
-          project_id: ${{secrets.PROJECT_ID}}
           deliverables: app.yaml
-          credentials: ${{secrets.GCP_SA_KEY}}
-          version: v1
