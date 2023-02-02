@@ -21,7 +21,7 @@ public class TestController {
 
     @GetMapping ("/hello")
     public String hello(){
-        return "Hello from Google Cloud";
+        return "Hello from Google Cloud, Trigger by GithubAction!";
     }
 
     @PostMapping("/books")
