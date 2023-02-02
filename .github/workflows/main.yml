@@ -23,6 +23,6 @@ jobs:
 
       - name: Deploy an App Engine app
         id: deploy-app
-        uses: google-github-actions/deploy-appengine@v1.1.1
+        uses: google-github-actions/deploy-appengine@v1
         with:
           deliverables: app.yaml
